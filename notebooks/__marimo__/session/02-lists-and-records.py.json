@@ -45,7 +45,7 @@
       "console": []
     },
     {
-      "id": "iibf",
+      "id": "bkHC",
       "code_hash": "ba73d9126654e4c3257ef69b3b9e1d71",
       "outputs": [
         {
@@ -59,39 +59,39 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Enter the cost:  16.5\nEnter the tax rate:  3.25\n",
+          "text": "Enter the cost:  25\nEnter the tax rate:  2\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
-      "id": "RdaT",
+      "id": "lEQa",
       "code_hash": "b0a667d7b380e2b5e7a10dfb635eac49",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<pre class='text-xs'>19.75</pre>"
+            "text/html": "<pre class='text-xs'>27.0</pre>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "KXzC",
+      "id": "PKri",
       "code_hash": "5d0a9ecf541aa51ea94bc5446946d5cf",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<pre class='text-xs'>165.0</pre>"
+            "text/html": "<pre class='text-xs'>250.0</pre>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "Yleu",
+      "id": "Xref",
       "code_hash": "00eb45049949dae9890cc51fd68b2439",
       "outputs": [
         {
@@ -105,13 +105,13 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "The total cost is $165.0\n",
+          "text": "The total cost is $250.0\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
-      "id": "HqLg",
+      "id": "SFPL",
       "code_hash": null,
       "outputs": [
         {
@@ -124,7 +124,7 @@
       "console": []
     },
     {
-      "id": "OdZf",
+      "id": "BYtC",
       "code_hash": "9bc20ec431429cc424aa1c2fdfac1894",
       "outputs": [
         {
@@ -137,7 +137,7 @@
       "console": []
     },
     {
-      "id": "Nlpz",
+      "id": "RGSE",
       "code_hash": "0898ebfa922145c76ef0293014f6f223",
       "outputs": [
         {
@@ -150,27 +150,27 @@
       "console": []
     },
     {
-      "id": "PVAC",
+      "id": "Kclp",
       "code_hash": "5c4b63dccf38a05e7a47fdea32956f70",
       "outputs": [
         {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
+          "type": "error",
+          "ename": "exception",
+          "evalue": "name 'cost_' is not defined. Did you mean: 'cost'?",
+          "traceback": null
         }
       ],
       "console": [
         {
           "type": "stream",
-          "name": "stdout",
-          "text": "Pre-tax: $16.75, total: $38.52\nPre-tax: $22.25, total: $38.52\nPre-tax: $25.00, total: $38.52\nPre-tax: $100.00, total: $38.52\nPre-tax: $200.00, total: $38.52\nPre-tax: $300.00, total: $38.52\n",
-          "mimetype": "text/plain"
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_13912\\__marimo__cell_Kclp_.py\"</span>, line <span class=\"m\">4</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"sa\">f</span><span class=\"s1\">'Pre-tax: $</span><span class=\"si\">{</span><span class=\"n\">x</span><span class=\"si\">:</span><span class=\"s1\">.2f</span><span class=\"si\">}</span><span class=\"s1\">, total: $</span><span class=\"si\">{</span><span class=\"n\">cost_</span><span class=\"si\">:</span><span class=\"s1\">.2f</span><span class=\"si\">}</span><span class=\"s1\">'</span><span class=\"p\">)</span>\n<span class=\"w\">                                        </span><span class=\"pm\">^^^^^</span>\n<span class=\"gr\">NameError</span>: <span class=\"n\">name 'cost_' is not defined. Did you mean: 'cost'?</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
         }
       ]
     },
     {
-      "id": "gLyA",
+      "id": "emfo",
       "code_hash": "2c8a52ad02cb613751efac4a3cbeb15e",
       "outputs": [
         {
@@ -183,7 +183,7 @@
       "console": []
     },
     {
-      "id": "PCsz",
+      "id": "Hstk",
       "code_hash": "083f17e45f68f289edc6bd59139001a9",
       "outputs": [
         {
@@ -196,7 +196,7 @@
       "console": []
     },
     {
-      "id": "GiZd",
+      "id": "nWHF",
       "code_hash": "d4e7ca4e227594557b1b9b8dacf88ea8",
       "outputs": [
         {
@@ -209,8 +209,8 @@
       "console": []
     },
     {
-      "id": "zSJZ",
-      "code_hash": "933d089bd6aec2b89f134b35825cca5b",
+      "id": "iLit",
+      "code_hash": "24a2b89e229fba0c20d7df50556ca2b7",
       "outputs": [
         {
           "type": "data",
@@ -219,17 +219,10 @@
           }
         }
       ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "Pre-tax: $16.75, total: $17.80\nPre-tax: $22.25, total: $23.64\nPre-tax: $25.00, total: $26.56\nPre-tax: $20.25, total: $21.52\nPre-tax: $36.25, total: $38.52\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "console": []
     },
     {
-      "id": "YwTZ",
+      "id": "ZHCJ",
       "code_hash": "68e475328e214dc93f987eadefebb42b",
       "outputs": [
         {
@@ -249,7 +242,7 @@
       ]
     },
     {
-      "id": "bkHC",
+      "id": "ROlb",
       "code_hash": "115cdc766461e63d887742e99ed47a5d",
       "outputs": [
         {
@@ -262,7 +255,7 @@
       "console": []
     },
     {
-      "id": "lEQa",
+      "id": "qnkX",
       "code_hash": "9b44ca46a3aeb5b1fdd7baa4989e7e88",
       "outputs": [
         {
@@ -275,7 +268,7 @@
       "console": []
     },
     {
-      "id": "PKri",
+      "id": "TqIu",
       "code_hash": "18db72514e4744db7535f15264da6a85",
       "outputs": [
         {
@@ -288,7 +281,7 @@
       "console": []
     },
     {
-      "id": "QNZv",
+      "id": "Vxnm",
       "code_hash": "c69aabcc95556e47720f514ac485e34c",
       "outputs": [
         {
@@ -301,7 +294,7 @@
       "console": []
     },
     {
-      "id": "Xref",
+      "id": "DnEU",
       "code_hash": "3162e71c11ea9d96662b50a13fe21705",
       "outputs": [
         {
@@ -314,7 +307,7 @@
       "console": []
     },
     {
-      "id": "SFPL",
+      "id": "ulZA",
       "code_hash": "8b92c83e94bc2769763f79661e30f6eb",
       "outputs": [
         {
@@ -327,7 +320,7 @@
       "console": []
     },
     {
-      "id": "BYtC",
+      "id": "ecfG",
       "code_hash": "19fcbdf4ffd48826b1d19dcc06b0483d",
       "outputs": [
         {
@@ -340,7 +333,7 @@
       "console": []
     },
     {
-      "id": "RGSE",
+      "id": "Pvdt",
       "code_hash": "9b6d1aeb948c609622d2cb77220b7d81",
       "outputs": [
         {
@@ -353,8 +346,8 @@
       "console": []
     },
     {
-      "id": "Kclp",
-      "code_hash": "86ccfec445e311d126e335c5cfc5f6ff",
+      "id": "ZBYS",
+      "code_hash": "450961e2ef6b8ccea9eb45a12bc255f0",
       "outputs": [
         {
           "type": "data",
@@ -367,13 +360,13 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "B\n",
+          "text": "Fail\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
-      "id": "uPOY",
+      "id": "aLJB",
       "code_hash": "e9bba23ef859d0a9ffb2ccf1d3f7ee1c",
       "outputs": [
         {
@@ -386,7 +379,7 @@
       "console": []
     },
     {
-      "id": "emfo",
+      "id": "nHfw",
       "code_hash": "fb022f81dfbffed89f3565af612fe5ec",
       "outputs": [
         {
@@ -399,7 +392,7 @@
       "console": []
     },
     {
-      "id": "Hstk",
+      "id": "xXTn",
       "code_hash": "413f573172b95d2cba69850b5e98a1e1",
       "outputs": [
         {
@@ -412,7 +405,7 @@
       "console": []
     },
     {
-      "id": "dIfq",
+      "id": "AjVT",
       "code_hash": "e8314d4e1e17c66196461db6bae9def2",
       "outputs": [
         {
@@ -425,7 +418,7 @@
       "console": []
     },
     {
-      "id": "tEIL",
+      "id": "pHFh",
       "code_hash": "eec32d3201756ddce4a9ad74a18137d8",
       "outputs": [
         {
@@ -438,7 +431,7 @@
       "console": []
     },
     {
-      "id": "qskA",
+      "id": "NCOB",
       "code_hash": "112f7dd45671438a11f9e416418fd612",
       "outputs": [
         {
@@ -458,7 +451,7 @@
       ]
     },
     {
-      "id": "nWHF",
+      "id": "aqbW",
       "code_hash": "53b3a52a2d49ccac692ab047603ba4c1",
       "outputs": [
         {
@@ -471,33 +464,46 @@
       "console": []
     },
     {
-      "id": "iLit",
-      "code_hash": "d7f1e30a273b00c372f58d2c77801a99",
+      "id": "TRpd",
+      "code_hash": "98c56ec66fae960f88c15f92b4dcfc3e",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<pre class='text-xs'>3</pre>"
+            "text/html": "<pre class='text-xs'>4</pre>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "QqOV",
+      "id": "TXez",
       "code_hash": "dc4562b11af0fc62ed5e1f1dc59956c4",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "application/json": "[\"stapler\", \"tape\"]"
+            "text/html": "<pre class='text-xs'>&#x27;stapler&#x27;</pre>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "ZHCJ",
+      "id": "mesN",
+      "code_hash": "85b60a69626a5da78f4693e0acaad8ec",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><code>append</code> always adds exactly one item, even if that one item is itself a list.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dNNg",
       "code_hash": "6935532a36f420a3c62570d37b41c982",
       "outputs": [
         {
@@ -510,7 +516,7 @@
       "console": []
     },
     {
-      "id": "ROlb",
+      "id": "yCnT",
       "code_hash": "01a8d5269858a498482cb962fade9d87",
       "outputs": [
         {
@@ -530,7 +536,40 @@
       ]
     },
     {
-      "id": "qnkX",
+      "id": "sDLC",
+      "code_hash": "48274f64537e3641362b04e277d82639",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><code>tickers.sort()</code> changes the list in place and gives back nothing (<code>None</code>), while <code>sorted(tickers)</code> leaves <code>tickers</code> alone and hands you back a new, sorted list.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "hENC",
+      "code_hash": "a24cd81dec103216b544347b72a727b8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "['NVDA', 'MSFT', 'AAPL']\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "wlCL",
       "code_hash": "f405b348260f91aaa0a73e40c618af25",
       "outputs": [
         {
@@ -543,20 +582,66 @@
       "console": []
     },
     {
-      "id": "TqIu",
-      "code_hash": "8d95c8f244caaf7e1606caf938476e98",
+      "id": "kqZH",
+      "code_hash": "5be6bfaab033d3e55be7cf2d636c9080",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "application/json": "[\"text/plain+float:12.5\", \"text/plain+float:8.0\", \"text/plain+float:19.99\", \"text/plain+float:4.99\"]"
+            "application/json": "[\"text/plain+float:12.5\", \"text/plain+float:8.0\", \"text/plain+float:19.99\"]"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "Vxnm",
+      "id": "SODm",
+      "code_hash": "c8ba5cd81bfd4f76e9001b7d29de9ada",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "False\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "ORZu",
+      "code_hash": "25b9ff30ae69f316535920a3b4e1213c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">You'd want two names on the same list when you want a change made through one name to be seen through the other, for example passing a list into a running total that several parts of the program add to.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "JMTw",
+      "code_hash": "fa02f45547bb5035ca066671e84cb6bf",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"text/plain+float:11.25\", \"text/plain+float:7.2\", \"text/plain+float:17.991\", \"text/plain+float:4.4910000000000005\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wAgl",
       "code_hash": "8e5e2a59e9f4c3607fa0b5cb1f86f715",
       "outputs": [
         {
@@ -569,7 +654,7 @@
       "console": []
     },
     {
-      "id": "DnEU",
+      "id": "rEll",
       "code_hash": "e22c9fe5df8633ecd9c695b5510cb87f",
       "outputs": [
         {
@@ -589,7 +674,73 @@
       ]
     },
     {
-      "id": "ulZA",
+      "id": "bCNU",
+      "code_hash": "cbe68f6da8f1888e71e2add01347c14c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><code>\"100\" + \"50\"</code> joined the two pieces of text end to end into <code>\"10050\"</code>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "zMmI",
+      "code_hash": "ca9b34ba04cb0c82764164612079017e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "150\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "mrea",
+      "code_hash": "428866640000dc925c086c6f264cb8b5",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "invalid literal for int() with base 10: '100.5'",
+          "traceback": null
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_13912\\__marimo__cell_mrea_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"nb\">int</span><span class=\"p\">(</span><span class=\"s2\">\"100.5\"</span><span class=\"p\">)</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~^^^^^^^^^</span>\n<span class=\"gr\">ValueError</span>: <span class=\"n\">invalid literal for int() with base 10: '100.5'</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "gPpf",
+      "code_hash": "214b029b8c946cea7bf3dd66ac5798cb",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>100.5</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dGlV",
       "code_hash": "1d4cd33d87f69cef37de87f6bdd519ca",
       "outputs": [
         {
@@ -602,7 +753,113 @@
       "console": []
     },
     {
-      "id": "ecfG",
+      "id": "tEZx",
+      "code_hash": "c33d04356fed101f03103b3a587b36ee",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "list index out of range",
+          "traceback": null
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_13912\\__marimo__cell_tEZx_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">charges</span><span class=\"p\">[</span><span class=\"mi\">5</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~^^^</span>\n<span class=\"gr\">IndexError</span>: <span class=\"n\">list index out of range</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "aXAF",
+      "code_hash": "eb69cd27525e0fb478ce1a83b3139c6d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">There is no item 5 because indexing starts at 0: a list of five charges fills positions 0, 1, 2, 3, and 4, so 5 is one position past the last item.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "jdKj",
+      "code_hash": "c29b27f37294d95e3e0dcc9180ad2c93",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "36.25\n36.25\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "pkCs",
+      "code_hash": "53ae0f9a499fc8cdd75fdec1d1d87e1a",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "list index out of range",
+          "traceback": null
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_13912\\__marimo__cell_pkCs_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">charges</span><span class=\"p\">[</span><span class=\"o\">-</span><span class=\"mi\">6</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~^^^^</span>\n<span class=\"gr\">IndexError</span>: <span class=\"n\">list index out of range</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "srAD",
+      "code_hash": "8f18f9bca62c3d8ce34ad45b9014ea94",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><code>charges[-6]</code> raised an <code>IndexError</code>. Negative indexing counts backward from the end, so <code>-1</code> is the last item, <code>-2</code> the one before it, and so on; with only five charges, the furthest back you can go is <code>-5</code> (the first item). <code>-6</code> asks for a position one step further back than the list has, so there is nothing there.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wYSB",
+      "code_hash": "1e5e85b88c61b693b4ca22ea0cc16516",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "3 of 5 orders shipped (60%)\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "SdmI",
       "code_hash": "b9a8a3f558e3abd939892755cdb675a5",
       "outputs": [
         {
@@ -615,7 +872,7 @@
       "console": []
     },
     {
-      "id": "Pvdt",
+      "id": "lgWD",
       "code_hash": "53f7fdf6f5abd48e8964538bd017999e",
       "outputs": [
         {
@@ -628,7 +885,7 @@
       "console": []
     },
     {
-      "id": "ZBYS",
+      "id": "yOPj",
       "code_hash": "692b58e986493ab11653c79bccc2af34",
       "outputs": [
         {
@@ -641,7 +898,7 @@
       "console": []
     },
     {
-      "id": "aLJB",
+      "id": "fwwy",
       "code_hash": "332446c7b3958fd46ca5386ebac32217",
       "outputs": [
         {
@@ -654,7 +911,7 @@
       "console": []
     },
     {
-      "id": "nHfw",
+      "id": "LJZf",
       "code_hash": "b4c4fb6a4f42fd5d98b6b18739a03241",
       "outputs": [
         {
@@ -667,7 +924,7 @@
       "console": []
     },
     {
-      "id": "xXTn",
+      "id": "urSm",
       "code_hash": "0ed1e9cc210d89a44e791cc8866fac27",
       "outputs": [
         {
@@ -680,7 +937,7 @@
       "console": []
     },
     {
-      "id": "AjVT",
+      "id": "jxvo",
       "code_hash": "2e78ba09148c2840a0ce57701f538f5b",
       "outputs": [
         {
@@ -693,7 +950,7 @@
       "console": []
     },
     {
-      "id": "pHFh",
+      "id": "mWxS",
       "code_hash": "215e85cc1d798eb376e760e2e6876215",
       "outputs": [
         {
@@ -706,7 +963,7 @@
       "console": []
     },
     {
-      "id": "NCOB",
+      "id": "CcZR",
       "code_hash": "56ae7cf264083e0936598623c21b783a",
       "outputs": [
         {
@@ -719,7 +976,7 @@
       "console": []
     },
     {
-      "id": "aqbW",
+      "id": "YWSi",
       "code_hash": "362a604c80a321d2e4d5c0c5e80b4671",
       "outputs": [
         {
@@ -732,7 +989,7 @@
       "console": []
     },
     {
-      "id": "TRpd",
+      "id": "zlud",
       "code_hash": "276567fb8e96c73de1480e5e345ad8c1",
       "outputs": [
         {
@@ -745,7 +1002,7 @@
       "console": []
     },
     {
-      "id": "TXez",
+      "id": "tZnO",
       "code_hash": "1a951e63750454427afca99d94d5c044",
       "outputs": [
         {
@@ -758,7 +1015,7 @@
       "console": []
     },
     {
-      "id": "dNNg",
+      "id": "xvXZ",
       "code_hash": "33f3e6ba51f144e4af890984773e0cfc",
       "outputs": [
         {
@@ -771,7 +1028,7 @@
       "console": []
     },
     {
-      "id": "yCnT",
+      "id": "CLip",
       "code_hash": "ee04f5dc9b3e474ede5f3f883c3aa33e",
       "outputs": [
         {
@@ -784,7 +1041,7 @@
       "console": []
     },
     {
-      "id": "wlCL",
+      "id": "YECM",
       "code_hash": "d7c2e174de0e810f192e0ebcd5f38e05",
       "outputs": [
         {
@@ -797,7 +1054,7 @@
       "console": []
     },
     {
-      "id": "kqZH",
+      "id": "cEAS",
       "code_hash": "84a6141f626588f299934afdd739184b",
       "outputs": [
         {
@@ -810,7 +1067,7 @@
       "console": []
     },
     {
-      "id": "wAgl",
+      "id": "iXej",
       "code_hash": "d8cb88a4a782aa1a3abecba9ae2a81aa",
       "outputs": [
         {

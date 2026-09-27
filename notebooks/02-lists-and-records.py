@@ -203,12 +203,11 @@ def _(charges):
 
 
 @app.cell
-def _(charges):
-    for chargea in charges:
-        tax_ = chargea * .0625
-        cost_ = chargea + tax_
-        print(f'Pre-tax: ${chargea:.2f}, total: ${cost_:.2f}')
-    return (cost_,)
+def _():
+    order_lines = ["notebook", "pen"]
+    order_lines.extend(["stapler", "tape"])
+    len(order_lines)
+    return (order_lines,)
 
 
 @app.cell
@@ -380,7 +379,7 @@ def _(mo):
 
 @app.cell
 def _():
-    score = 85
+    score = 55
     if score >= 90:
         print("A")
     elif score >= 80:
@@ -451,7 +450,7 @@ def _(statuses):
 def _(shipped_count, statuses):
     percent_shipped = shipped_count / len(statuses) * 100
     print(percent_shipped)
-    return
+    return (percent_shipped,)
 
 
 @app.cell(hide_code=True)
@@ -478,14 +477,23 @@ def _(mo):
 @app.cell
 def _():
     order_lines = ["notebook", "pen"]
-    order_lines.append(["stapler", "tape"])
+    order_lines.extend(["stapler", "tape"])
     len(order_lines)
+
     return (order_lines,)
 
 
 @app.cell
 def _(order_lines):
     order_lines[2]
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    `append` always adds exactly one item, even if that one item is itself a list.
+    """)
     return
 
 
@@ -516,6 +524,20 @@ def _():
     print(sorted(tickers))
     print(tickers.sort())
     tickers
+    return (tickers,)
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    `tickers.sort()` changes the list in place and gives back nothing (`None`), while `sorted(tickers)` leaves `tickers` alone and hands you back a new, sorted list.
+    """)
+    return
+
+
+@app.cell
+def _(tickers):
+    print(sorted(tickers, reverse=True))
     return
 
 
@@ -549,9 +571,31 @@ def _(mo):
 @app.cell
 def _():
     prices = [12.50, 8.00, 19.99]
-    sale_prices = prices
+    sale_prices = prices [:]
     sale_prices.append(4.99)
     prices
+    return prices, sale_prices
+
+
+@app.cell
+def _(prices, sale_prices):
+    print(prices is sale_prices)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    You'd want two names on the same list when you want a change made through one name to be seen through the other, for example passing a list into a running total that several parts of the program add to.
+    """)
+    return
+
+
+@app.cell
+def _(sale_prices):
+    for i in range(len(sale_prices)):
+        sale_prices[i] = sale_prices[i] * 0.9
+    sale_prices
     return
 
 
@@ -583,6 +627,32 @@ def _():
     return
 
 
+@app.cell
+def _(mo):
+    mo.md(r"""
+    `"100" + "50"` joined the two pieces of text end to end into `"10050"`.
+    """)
+    return
+
+
+@app.cell
+def _():
+    print(int("100") + int("50"))
+    return
+
+
+@app.cell
+def _():
+    int("100.5")
+    return
+
+
+@app.cell
+def _():
+    float("100.5")
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -602,6 +672,47 @@ def _(mo):
     > `3 of 5 orders shipped (60%)`. An f-string is the short way to build a sentence out of
     > values, and it was section 5 of last week's notebook.
     """)
+    return
+
+
+@app.cell
+def _(charges):
+    charges[5]
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    There is no item 5 because indexing starts at 0: a list of five charges fills positions 0, 1, 2, 3, and 4, so 5 is one position past the last item.
+    """)
+    return
+
+
+@app.cell
+def _(charges):
+    print(charges[-1])
+    print(charges[len(charges) - 1])
+    return
+
+
+@app.cell
+def _(charges):
+    charges[-6]
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    `charges[-6]` raised an `IndexError`. Negative indexing counts backward from the end, so `-1` is the last item, `-2` the one before it, and so on; with only five charges, the furthest back you can go is `-5` (the first item). `-6` asks for a position one step further back than the list has, so there is nothing there.
+    """)
+    return
+
+
+@app.cell
+def _(percent_shipped, shipped_count, statuses):
+    print(f"{shipped_count} of {len(statuses)} orders shipped ({percent_shipped:.0f}%)")
     return
 
 
