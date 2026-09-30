@@ -59,7 +59,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Enter the cost:  25\nEnter the tax rate:  2\n",
+          "text": "Enter the cost:  30\nEnter the tax rate:  1\n",
           "mimetype": "text/plain"
         }
       ]
@@ -71,7 +71,7 @@
         {
           "type": "data",
           "data": {
-            "text/html": "<pre class='text-xs'>27.0</pre>"
+            "text/html": "<pre class='text-xs'>31.0</pre>"
           }
         }
       ],
@@ -84,7 +84,7 @@
         {
           "type": "data",
           "data": {
-            "text/html": "<pre class='text-xs'>250.0</pre>"
+            "text/html": "<pre class='text-xs'>300.0</pre>"
           }
         }
       ],
@@ -105,7 +105,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "The total cost is $250.0\n",
+          "text": "The total cost is $300.0\n",
           "mimetype": "text/plain"
         }
       ]
@@ -164,7 +164,7 @@
         {
           "type": "stream",
           "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_13912\\__marimo__cell_Kclp_.py\"</span>, line <span class=\"m\">4</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"sa\">f</span><span class=\"s1\">'Pre-tax: $</span><span class=\"si\">{</span><span class=\"n\">x</span><span class=\"si\">:</span><span class=\"s1\">.2f</span><span class=\"si\">}</span><span class=\"s1\">, total: $</span><span class=\"si\">{</span><span class=\"n\">cost_</span><span class=\"si\">:</span><span class=\"s1\">.2f</span><span class=\"si\">}</span><span class=\"s1\">'</span><span class=\"p\">)</span>\n<span class=\"w\">                                        </span><span class=\"pm\">^^^^^</span>\n<span class=\"gr\">NameError</span>: <span class=\"n\">name 'cost_' is not defined. Did you mean: 'cost'?</span>\n</pre></div>\n</span>",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_11604\\__marimo__cell_Kclp_.py\"</span>, line <span class=\"m\">4</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"sa\">f</span><span class=\"s1\">'Pre-tax: $</span><span class=\"si\">{</span><span class=\"n\">x</span><span class=\"si\">:</span><span class=\"s1\">.2f</span><span class=\"si\">}</span><span class=\"s1\">, total: $</span><span class=\"si\">{</span><span class=\"n\">cost_</span><span class=\"si\">:</span><span class=\"s1\">.2f</span><span class=\"si\">}</span><span class=\"s1\">'</span><span class=\"p\">)</span>\n<span class=\"w\">                                        </span><span class=\"pm\">^^^^^</span>\n<span class=\"gr\">NameError</span>: <span class=\"n\">name 'cost_' is not defined. Did you mean: 'cost'?</span>\n</pre></div>\n</span>",
           "mimetype": "application/vnd.marimo+traceback"
         }
       ]
@@ -210,13 +210,13 @@
     },
     {
       "id": "iLit",
-      "code_hash": "24a2b89e229fba0c20d7df50556ca2b7",
+      "code_hash": "c85449df5aaeecfdcb957912380535a2",
       "outputs": [
         {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
+          "type": "error",
+          "ename": "multiple-defs",
+          "evalue": "The variable 'order_lines' was defined by another cell",
+          "traceback": []
         }
       ],
       "console": []
@@ -465,13 +465,13 @@
     },
     {
       "id": "TRpd",
-      "code_hash": "98c56ec66fae960f88c15f92b4dcfc3e",
+      "code_hash": "c85449df5aaeecfdcb957912380535a2",
       "outputs": [
         {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>4</pre>"
-          }
+          "type": "error",
+          "ename": "multiple-defs",
+          "evalue": "The variable 'order_lines' was defined by another cell",
+          "traceback": []
         }
       ],
       "console": []
@@ -481,16 +481,23 @@
       "code_hash": "dc4562b11af0fc62ed5e1f1dc59956c4",
       "outputs": [
         {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>&#x27;stapler&#x27;</pre>"
-          }
+          "type": "error",
+          "ename": "exception",
+          "evalue": "Name `order_lines` is not defined. It was expected to be defined in ",
+          "traceback": null
         }
       ],
-      "console": []
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_11604\\__marimo__cell_TXez_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">order_lines</span><span class=\"p\">[</span><span class=\"mi\">2</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">^^^^^^^^^^^</span>\n<span class=\"gr\">NameError</span>: <span class=\"n\">name 'order_lines' is not defined</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
     },
     {
-      "id": "mesN",
+      "id": "dNNg",
       "code_hash": "85b60a69626a5da78f4693e0acaad8ec",
       "outputs": [
         {
@@ -503,7 +510,7 @@
       "console": []
     },
     {
-      "id": "dNNg",
+      "id": "yCnT",
       "code_hash": "6935532a36f420a3c62570d37b41c982",
       "outputs": [
         {
@@ -516,7 +523,7 @@
       "console": []
     },
     {
-      "id": "yCnT",
+      "id": "wlCL",
       "code_hash": "01a8d5269858a498482cb962fade9d87",
       "outputs": [
         {
@@ -536,7 +543,7 @@
       ]
     },
     {
-      "id": "sDLC",
+      "id": "kqZH",
       "code_hash": "48274f64537e3641362b04e277d82639",
       "outputs": [
         {
@@ -549,7 +556,7 @@
       "console": []
     },
     {
-      "id": "hENC",
+      "id": "wAgl",
       "code_hash": "a24cd81dec103216b544347b72a727b8",
       "outputs": [
         {
@@ -569,7 +576,7 @@
       ]
     },
     {
-      "id": "wlCL",
+      "id": "rEll",
       "code_hash": "f405b348260f91aaa0a73e40c618af25",
       "outputs": [
         {
@@ -582,7 +589,7 @@
       "console": []
     },
     {
-      "id": "kqZH",
+      "id": "dGlV",
       "code_hash": "5be6bfaab033d3e55be7cf2d636c9080",
       "outputs": [
         {
@@ -595,7 +602,7 @@
       "console": []
     },
     {
-      "id": "SODm",
+      "id": "SdmI",
       "code_hash": "c8ba5cd81bfd4f76e9001b7d29de9ada",
       "outputs": [
         {
@@ -615,7 +622,7 @@
       ]
     },
     {
-      "id": "ORZu",
+      "id": "lgWD",
       "code_hash": "25b9ff30ae69f316535920a3b4e1213c",
       "outputs": [
         {
@@ -628,7 +635,7 @@
       "console": []
     },
     {
-      "id": "JMTw",
+      "id": "yOPj",
       "code_hash": "fa02f45547bb5035ca066671e84cb6bf",
       "outputs": [
         {
@@ -641,7 +648,7 @@
       "console": []
     },
     {
-      "id": "wAgl",
+      "id": "fwwy",
       "code_hash": "8e5e2a59e9f4c3607fa0b5cb1f86f715",
       "outputs": [
         {
@@ -654,7 +661,7 @@
       "console": []
     },
     {
-      "id": "rEll",
+      "id": "LJZf",
       "code_hash": "e22c9fe5df8633ecd9c695b5510cb87f",
       "outputs": [
         {
@@ -674,7 +681,7 @@
       ]
     },
     {
-      "id": "bCNU",
+      "id": "urSm",
       "code_hash": "cbe68f6da8f1888e71e2add01347c14c",
       "outputs": [
         {
@@ -687,7 +694,7 @@
       "console": []
     },
     {
-      "id": "zMmI",
+      "id": "jxvo",
       "code_hash": "ca9b34ba04cb0c82764164612079017e",
       "outputs": [
         {
@@ -707,7 +714,7 @@
       ]
     },
     {
-      "id": "mrea",
+      "id": "mWxS",
       "code_hash": "428866640000dc925c086c6f264cb8b5",
       "outputs": [
         {
@@ -721,13 +728,13 @@
         {
           "type": "stream",
           "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_13912\\__marimo__cell_mrea_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"nb\">int</span><span class=\"p\">(</span><span class=\"s2\">\"100.5\"</span><span class=\"p\">)</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~^^^^^^^^^</span>\n<span class=\"gr\">ValueError</span>: <span class=\"n\">invalid literal for int() with base 10: '100.5'</span>\n</pre></div>\n</span>",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_11604\\__marimo__cell_mWxS_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"nb\">int</span><span class=\"p\">(</span><span class=\"s2\">\"100.5\"</span><span class=\"p\">)</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~^^^^^^^^^</span>\n<span class=\"gr\">ValueError</span>: <span class=\"n\">invalid literal for int() with base 10: '100.5'</span>\n</pre></div>\n</span>",
           "mimetype": "application/vnd.marimo+traceback"
         }
       ]
     },
     {
-      "id": "gPpf",
+      "id": "CcZR",
       "code_hash": "214b029b8c946cea7bf3dd66ac5798cb",
       "outputs": [
         {
@@ -740,7 +747,7 @@
       "console": []
     },
     {
-      "id": "dGlV",
+      "id": "YWSi",
       "code_hash": "1d4cd33d87f69cef37de87f6bdd519ca",
       "outputs": [
         {
@@ -753,7 +760,7 @@
       "console": []
     },
     {
-      "id": "tEZx",
+      "id": "zlud",
       "code_hash": "c33d04356fed101f03103b3a587b36ee",
       "outputs": [
         {
@@ -767,13 +774,13 @@
         {
           "type": "stream",
           "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_13912\\__marimo__cell_tEZx_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">charges</span><span class=\"p\">[</span><span class=\"mi\">5</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~^^^</span>\n<span class=\"gr\">IndexError</span>: <span class=\"n\">list index out of range</span>\n</pre></div>\n</span>",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_11604\\__marimo__cell_zlud_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">charges</span><span class=\"p\">[</span><span class=\"mi\">5</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~^^^</span>\n<span class=\"gr\">IndexError</span>: <span class=\"n\">list index out of range</span>\n</pre></div>\n</span>",
           "mimetype": "application/vnd.marimo+traceback"
         }
       ]
     },
     {
-      "id": "aXAF",
+      "id": "tZnO",
       "code_hash": "eb69cd27525e0fb478ce1a83b3139c6d",
       "outputs": [
         {
@@ -786,7 +793,7 @@
       "console": []
     },
     {
-      "id": "jdKj",
+      "id": "xvXZ",
       "code_hash": "c29b27f37294d95e3e0dcc9180ad2c93",
       "outputs": [
         {
@@ -806,7 +813,7 @@
       ]
     },
     {
-      "id": "pkCs",
+      "id": "CLip",
       "code_hash": "53ae0f9a499fc8cdd75fdec1d1d87e1a",
       "outputs": [
         {
@@ -820,13 +827,13 @@
         {
           "type": "stream",
           "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_13912\\__marimo__cell_pkCs_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">charges</span><span class=\"p\">[</span><span class=\"o\">-</span><span class=\"mi\">6</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~^^^^</span>\n<span class=\"gr\">IndexError</span>: <span class=\"n\">list index out of range</span>\n</pre></div>\n</span>",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_11604\\__marimo__cell_CLip_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">charges</span><span class=\"p\">[</span><span class=\"o\">-</span><span class=\"mi\">6</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~^^^^</span>\n<span class=\"gr\">IndexError</span>: <span class=\"n\">list index out of range</span>\n</pre></div>\n</span>",
           "mimetype": "application/vnd.marimo+traceback"
         }
       ]
     },
     {
-      "id": "srAD",
+      "id": "YECM",
       "code_hash": "8f18f9bca62c3d8ce34ad45b9014ea94",
       "outputs": [
         {
@@ -839,7 +846,7 @@
       "console": []
     },
     {
-      "id": "wYSB",
+      "id": "cEAS",
       "code_hash": "1e5e85b88c61b693b4ca22ea0cc16516",
       "outputs": [
         {
@@ -859,7 +866,7 @@
       ]
     },
     {
-      "id": "SdmI",
+      "id": "iXej",
       "code_hash": "b9a8a3f558e3abd939892755cdb675a5",
       "outputs": [
         {
@@ -872,7 +879,7 @@
       "console": []
     },
     {
-      "id": "lgWD",
+      "id": "EJmg",
       "code_hash": "53f7fdf6f5abd48e8964538bd017999e",
       "outputs": [
         {
@@ -885,7 +892,7 @@
       "console": []
     },
     {
-      "id": "yOPj",
+      "id": "UmEG",
       "code_hash": "692b58e986493ab11653c79bccc2af34",
       "outputs": [
         {
@@ -898,7 +905,7 @@
       "console": []
     },
     {
-      "id": "fwwy",
+      "id": "vEBW",
       "code_hash": "332446c7b3958fd46ca5386ebac32217",
       "outputs": [
         {
@@ -911,7 +918,20 @@
       "console": []
     },
     {
-      "id": "LJZf",
+      "id": "mOZo",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kLmu",
       "code_hash": "b4c4fb6a4f42fd5d98b6b18739a03241",
       "outputs": [
         {
@@ -924,7 +944,60 @@
       "console": []
     },
     {
-      "id": "urSm",
+      "id": "jnKI",
+      "code_hash": "d047301cab1e6c4f073208268f4c2008",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>16.75</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "OQBU",
+      "code_hash": "2c0ebdac371fde0a720bc52f0ec33995",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "'freight'",
+          "traceback": null
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_11604\\__marimo__cell_OQBU_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">first_order</span><span class=\"p\">[</span><span class=\"s2\">\"freight\"</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~~~~~^^^^^^^^^^^</span>\n<span class=\"gr\">KeyError</span>: <span class=\"n\">'freight'</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "gvjO",
+      "code_hash": "8c9992a7ee25d4caccd1bebf692690ee",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "0",
+          "traceback": null
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_11604\\__marimo__cell_gvjO_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">first_order</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~~~~~^^^</span>\n<span class=\"gr\">KeyError</span>: <span class=\"n\">0</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "IpqN",
       "code_hash": "0ed1e9cc210d89a44e791cc8866fac27",
       "outputs": [
         {
@@ -937,7 +1010,7 @@
       "console": []
     },
     {
-      "id": "jxvo",
+      "id": "dxZZ",
       "code_hash": "2e78ba09148c2840a0ce57701f538f5b",
       "outputs": [
         {
@@ -950,7 +1023,7 @@
       "console": []
     },
     {
-      "id": "mWxS",
+      "id": "dlnW",
       "code_hash": "215e85cc1d798eb376e760e2e6876215",
       "outputs": [
         {
@@ -963,7 +1036,7 @@
       "console": []
     },
     {
-      "id": "CcZR",
+      "id": "TTti",
       "code_hash": "56ae7cf264083e0936598623c21b783a",
       "outputs": [
         {
@@ -976,7 +1049,7 @@
       "console": []
     },
     {
-      "id": "YWSi",
+      "id": "RKFZ",
       "code_hash": "362a604c80a321d2e4d5c0c5e80b4671",
       "outputs": [
         {
@@ -989,7 +1062,53 @@
       "console": []
     },
     {
-      "id": "zlud",
+      "id": "OoJV",
+      "code_hash": "6e3ebd61a9cd554228dfe207af0acece",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>827.0</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "HnOX",
+      "code_hash": "8cd39e3886f952c728cf1a9e44798415",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>3</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PhXh",
+      "code_hash": "5c44dc64e0f08209ce0285fc26d7a0d5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Order 10263 has the largest freight: 56.00\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "IaQp",
       "code_hash": "276567fb8e96c73de1480e5e345ad8c1",
       "outputs": [
         {
@@ -1002,7 +1121,7 @@
       "console": []
     },
     {
-      "id": "tZnO",
+      "id": "IWgg",
       "code_hash": "1a951e63750454427afca99d94d5c044",
       "outputs": [
         {
@@ -1015,7 +1134,7 @@
       "console": []
     },
     {
-      "id": "xvXZ",
+      "id": "fCoF",
       "code_hash": "33f3e6ba51f144e4af890984773e0cfc",
       "outputs": [
         {
@@ -1028,7 +1147,7 @@
       "console": []
     },
     {
-      "id": "CLip",
+      "id": "LkGn",
       "code_hash": "ee04f5dc9b3e474ede5f3f883c3aa33e",
       "outputs": [
         {
@@ -1041,7 +1160,7 @@
       "console": []
     },
     {
-      "id": "YECM",
+      "id": "zVRe",
       "code_hash": "d7c2e174de0e810f192e0ebcd5f38e05",
       "outputs": [
         {
@@ -1054,7 +1173,7 @@
       "console": []
     },
     {
-      "id": "cEAS",
+      "id": "woaO",
       "code_hash": "84a6141f626588f299934afdd739184b",
       "outputs": [
         {
@@ -1067,7 +1186,7 @@
       "console": []
     },
     {
-      "id": "iXej",
+      "id": "HnMC",
       "code_hash": "d8cb88a4a782aa1a3abecba9ae2a81aa",
       "outputs": [
         {

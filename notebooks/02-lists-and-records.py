@@ -479,7 +479,6 @@ def _():
     order_lines = ["notebook", "pen"]
     order_lines.extend(["stapler", "tape"])
     len(order_lines)
-
     return (order_lines,)
 
 
@@ -758,6 +757,11 @@ def _(first_order):
     return
 
 
+@app.cell
+def _():
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -772,6 +776,24 @@ def _(mo):
     Two of them fail, and both give the same kind of error. Add a cell and find out
     which, and what the message says. A `KeyError` names the key it could not find.
     """)
+    return
+
+
+@app.cell
+def _(first_order):
+    first_order["Freight"]
+    return
+
+
+@app.cell
+def _(first_order):
+    first_order["freight"]
+    return
+
+
+@app.cell
+def _(first_order):
+    first_order[0]
     return
 
 
@@ -861,6 +883,37 @@ def _(mo):
     **Going further.** Look at the three orders with no `ShippedDate`. What do they have
     in common that the other 27 do not? The answer is not about shipping.
     """)
+    return
+
+
+@app.cell
+def _(orders):
+    total_freight = 0
+    for order in orders:
+        total_freight = total_freight + order["Freight"]
+    total_freight
+    return
+
+
+@app.cell
+def _(orders):
+    no_shipped_date_count = 0
+    for an_order in orders:
+        if an_order["ShippedDate"] is None:
+            no_shipped_date_count = no_shipped_date_count + 1
+    no_shipped_date_count
+    return
+
+
+@app.cell
+def _(orders):
+    largest_freight = orders[0]["Freight"]
+    largest_order_id = orders[0]["OrderID"]
+    for order_row in orders:
+        if order_row["Freight"] > largest_freight:
+            largest_freight = order_row["Freight"]
+            largest_order_id = order_row["OrderID"]
+    print(f"Order {largest_order_id} has the largest freight: {largest_freight:.2f}")
     return
 
 
