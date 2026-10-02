@@ -937,10 +937,7 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    *One row is ...*
-
-    *(Replace this line with your own sentence. If this cell shows you code instead of
-    text, use the cell menu to turn it into a markdown cell.)*
+    *One row is one customer's order — the single event of them ordering something.
     """)
     return
 
@@ -978,6 +975,42 @@ def _():
         {"Symbol": "TSLA", "Shares": 150, "Price": 255.70},
     ]
     portfolio
+    return (portfolio,)
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    For each holding, multiply price with shares then sum them together.
+    """)
+    return
+
+
+@app.cell
+def _(portfolio):
+    total_cost_portfolio = 0
+    for holding in portfolio:
+        total_cost_portfolio = total_cost_portfolio + holding["Shares"] * holding["Price"]
+    print(f"Total cost: ${total_cost_portfolio:.2f}")
+    return
+
+
+@app.cell
+def _():
+    inventory = [
+        {"Title": "Python Basics", "Copies": 12, "Price": 29.99},
+        {"Title": "Data Stories", "Copies": 5, "Price": 45.50},
+        {"Title": "Clean Code", "Copies": 8, "Price": 38.00},
+    ]
+    return (inventory,)
+
+
+@app.cell
+def _(inventory):
+    total_inventory = 0
+    for holdings in inventory:
+        total_inventory = total_inventory + holdings["Copies"] * holdings["Price"]
+    print(f"Total inventory: ${total_inventory:.2f}")
     return
 
 

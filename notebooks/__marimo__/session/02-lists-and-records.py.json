@@ -59,7 +59,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Enter the cost:  30\nEnter the tax rate:  1\n",
+          "text": "Enter the cost:  30\nEnter the tax rate:  2\n",
           "mimetype": "text/plain"
         }
       ]
@@ -71,7 +71,7 @@
         {
           "type": "data",
           "data": {
-            "text/html": "<pre class='text-xs'>31.0</pre>"
+            "text/html": "<pre class='text-xs'>32.0</pre>"
           }
         }
       ],
@@ -164,7 +164,7 @@
         {
           "type": "stream",
           "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_11604\\__marimo__cell_Kclp_.py\"</span>, line <span class=\"m\">4</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"sa\">f</span><span class=\"s1\">'Pre-tax: $</span><span class=\"si\">{</span><span class=\"n\">x</span><span class=\"si\">:</span><span class=\"s1\">.2f</span><span class=\"si\">}</span><span class=\"s1\">, total: $</span><span class=\"si\">{</span><span class=\"n\">cost_</span><span class=\"si\">:</span><span class=\"s1\">.2f</span><span class=\"si\">}</span><span class=\"s1\">'</span><span class=\"p\">)</span>\n<span class=\"w\">                                        </span><span class=\"pm\">^^^^^</span>\n<span class=\"gr\">NameError</span>: <span class=\"n\">name 'cost_' is not defined. Did you mean: 'cost'?</span>\n</pre></div>\n</span>",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_26372\\__marimo__cell_Kclp_.py\"</span>, line <span class=\"m\">4</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"sa\">f</span><span class=\"s1\">'Pre-tax: $</span><span class=\"si\">{</span><span class=\"n\">x</span><span class=\"si\">:</span><span class=\"s1\">.2f</span><span class=\"si\">}</span><span class=\"s1\">, total: $</span><span class=\"si\">{</span><span class=\"n\">cost_</span><span class=\"si\">:</span><span class=\"s1\">.2f</span><span class=\"si\">}</span><span class=\"s1\">'</span><span class=\"p\">)</span>\n<span class=\"w\">                                        </span><span class=\"pm\">^^^^^</span>\n<span class=\"gr\">NameError</span>: <span class=\"n\">name 'cost_' is not defined. Did you mean: 'cost'?</span>\n</pre></div>\n</span>",
           "mimetype": "application/vnd.marimo+traceback"
         }
       ]
@@ -491,7 +491,7 @@
         {
           "type": "stream",
           "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_11604\\__marimo__cell_TXez_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">order_lines</span><span class=\"p\">[</span><span class=\"mi\">2</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">^^^^^^^^^^^</span>\n<span class=\"gr\">NameError</span>: <span class=\"n\">name 'order_lines' is not defined</span>\n</pre></div>\n</span>",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_26372\\__marimo__cell_TXez_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">order_lines</span><span class=\"p\">[</span><span class=\"mi\">2</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">^^^^^^^^^^^</span>\n<span class=\"gr\">NameError</span>: <span class=\"n\">name 'order_lines' is not defined</span>\n</pre></div>\n</span>",
           "mimetype": "application/vnd.marimo+traceback"
         }
       ]
@@ -728,7 +728,7 @@
         {
           "type": "stream",
           "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_11604\\__marimo__cell_mWxS_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"nb\">int</span><span class=\"p\">(</span><span class=\"s2\">\"100.5\"</span><span class=\"p\">)</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~^^^^^^^^^</span>\n<span class=\"gr\">ValueError</span>: <span class=\"n\">invalid literal for int() with base 10: '100.5'</span>\n</pre></div>\n</span>",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_26372\\__marimo__cell_mWxS_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"nb\">int</span><span class=\"p\">(</span><span class=\"s2\">\"100.5\"</span><span class=\"p\">)</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~^^^^^^^^^</span>\n<span class=\"gr\">ValueError</span>: <span class=\"n\">invalid literal for int() with base 10: '100.5'</span>\n</pre></div>\n</span>",
           "mimetype": "application/vnd.marimo+traceback"
         }
       ]
@@ -774,7 +774,7 @@
         {
           "type": "stream",
           "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_11604\\__marimo__cell_zlud_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">charges</span><span class=\"p\">[</span><span class=\"mi\">5</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~^^^</span>\n<span class=\"gr\">IndexError</span>: <span class=\"n\">list index out of range</span>\n</pre></div>\n</span>",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_26372\\__marimo__cell_zlud_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">charges</span><span class=\"p\">[</span><span class=\"mi\">5</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~^^^</span>\n<span class=\"gr\">IndexError</span>: <span class=\"n\">list index out of range</span>\n</pre></div>\n</span>",
           "mimetype": "application/vnd.marimo+traceback"
         }
       ]
@@ -827,7 +827,7 @@
         {
           "type": "stream",
           "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_11604\\__marimo__cell_CLip_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">charges</span><span class=\"p\">[</span><span class=\"o\">-</span><span class=\"mi\">6</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~^^^^</span>\n<span class=\"gr\">IndexError</span>: <span class=\"n\">list index out of range</span>\n</pre></div>\n</span>",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_26372\\__marimo__cell_CLip_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">charges</span><span class=\"p\">[</span><span class=\"o\">-</span><span class=\"mi\">6</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~^^^^</span>\n<span class=\"gr\">IndexError</span>: <span class=\"n\">list index out of range</span>\n</pre></div>\n</span>",
           "mimetype": "application/vnd.marimo+traceback"
         }
       ]
@@ -918,7 +918,7 @@
       "console": []
     },
     {
-      "id": "mOZo",
+      "id": "kLmu",
       "code_hash": null,
       "outputs": [
         {
@@ -931,7 +931,7 @@
       "console": []
     },
     {
-      "id": "kLmu",
+      "id": "IpqN",
       "code_hash": "b4c4fb6a4f42fd5d98b6b18739a03241",
       "outputs": [
         {
@@ -944,8 +944,8 @@
       "console": []
     },
     {
-      "id": "jnKI",
-      "code_hash": "d047301cab1e6c4f073208268f4c2008",
+      "id": "dxZZ",
+      "code_hash": "2bfc2c56d92d1252dcea892b8285d87a",
       "outputs": [
         {
           "type": "data",
@@ -957,7 +957,7 @@
       "console": []
     },
     {
-      "id": "OQBU",
+      "id": "dlnW",
       "code_hash": "2c0ebdac371fde0a720bc52f0ec33995",
       "outputs": [
         {
@@ -971,13 +971,13 @@
         {
           "type": "stream",
           "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_11604\\__marimo__cell_OQBU_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">first_order</span><span class=\"p\">[</span><span class=\"s2\">\"freight\"</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~~~~~^^^^^^^^^^^</span>\n<span class=\"gr\">KeyError</span>: <span class=\"n\">'freight'</span>\n</pre></div>\n</span>",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_26372\\__marimo__cell_dlnW_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">first_order</span><span class=\"p\">[</span><span class=\"s2\">\"freight\"</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~~~~~^^^^^^^^^^^</span>\n<span class=\"gr\">KeyError</span>: <span class=\"n\">'freight'</span>\n</pre></div>\n</span>",
           "mimetype": "application/vnd.marimo+traceback"
         }
       ]
     },
     {
-      "id": "gvjO",
+      "id": "TTti",
       "code_hash": "8c9992a7ee25d4caccd1bebf692690ee",
       "outputs": [
         {
@@ -991,13 +991,13 @@
         {
           "type": "stream",
           "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_11604\\__marimo__cell_gvjO_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">first_order</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~~~~~^^^</span>\n<span class=\"gr\">KeyError</span>: <span class=\"n\">0</span>\n</pre></div>\n</span>",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Init\\AppData\\Local\\Temp\\marimo_26372\\__marimo__cell_TTti_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">first_order</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~~~~~^^^</span>\n<span class=\"gr\">KeyError</span>: <span class=\"n\">0</span>\n</pre></div>\n</span>",
           "mimetype": "application/vnd.marimo+traceback"
         }
       ]
     },
     {
-      "id": "IpqN",
+      "id": "RKFZ",
       "code_hash": "0ed1e9cc210d89a44e791cc8866fac27",
       "outputs": [
         {
@@ -1010,7 +1010,7 @@
       "console": []
     },
     {
-      "id": "dxZZ",
+      "id": "IaQp",
       "code_hash": "2e78ba09148c2840a0ce57701f538f5b",
       "outputs": [
         {
@@ -1023,7 +1023,7 @@
       "console": []
     },
     {
-      "id": "dlnW",
+      "id": "IWgg",
       "code_hash": "215e85cc1d798eb376e760e2e6876215",
       "outputs": [
         {
@@ -1036,7 +1036,7 @@
       "console": []
     },
     {
-      "id": "TTti",
+      "id": "fCoF",
       "code_hash": "56ae7cf264083e0936598623c21b783a",
       "outputs": [
         {
@@ -1049,7 +1049,7 @@
       "console": []
     },
     {
-      "id": "RKFZ",
+      "id": "LkGn",
       "code_hash": "362a604c80a321d2e4d5c0c5e80b4671",
       "outputs": [
         {
@@ -1062,7 +1062,7 @@
       "console": []
     },
     {
-      "id": "OoJV",
+      "id": "zVRe",
       "code_hash": "6e3ebd61a9cd554228dfe207af0acece",
       "outputs": [
         {
@@ -1075,7 +1075,7 @@
       "console": []
     },
     {
-      "id": "HnOX",
+      "id": "woaO",
       "code_hash": "8cd39e3886f952c728cf1a9e44798415",
       "outputs": [
         {
@@ -1088,7 +1088,7 @@
       "console": []
     },
     {
-      "id": "PhXh",
+      "id": "HnMC",
       "code_hash": "5c44dc64e0f08209ce0285fc26d7a0d5",
       "outputs": [
         {
@@ -1108,7 +1108,7 @@
       ]
     },
     {
-      "id": "IaQp",
+      "id": "wadT",
       "code_hash": "276567fb8e96c73de1480e5e345ad8c1",
       "outputs": [
         {
@@ -1121,20 +1121,20 @@
       "console": []
     },
     {
-      "id": "IWgg",
-      "code_hash": "1a951e63750454427afca99d94d5c044",
+      "id": "VCRE",
+      "code_hash": "8a8a4d76d08820c9d3bce1ad957d10fd",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><em>One row is ...</em></span>\n<span class=\"paragraph\"><em>(Replace this line with your own sentence. If this cell shows you code instead of\ntext, use the cell menu to turn it into a markdown cell.)</em></span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">*One row is one customer's order \u2014 the single event of them ordering something.</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "fCoF",
+      "id": "hgqU",
       "code_hash": "33f3e6ba51f144e4af890984773e0cfc",
       "outputs": [
         {
@@ -1147,7 +1147,7 @@
       "console": []
     },
     {
-      "id": "LkGn",
+      "id": "PSUk",
       "code_hash": "ee04f5dc9b3e474ede5f3f883c3aa33e",
       "outputs": [
         {
@@ -1160,7 +1160,73 @@
       "console": []
     },
     {
-      "id": "zVRe",
+      "id": "pAUi",
+      "code_hash": "e5a69c01674a4555df9ccaad91dddc13",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">For each holding, multiply price with shares then sum them together.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "pBGh",
+      "code_hash": "8b2f99bd837586cc5bb734da098e4dd6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Total cost: $116302.70\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "uHgi",
+      "code_hash": "b77270f59394b048a94f1c8861a97c71",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "OdEz",
+      "code_hash": "2d5764948fd34a84d443ca3a465c4b8d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Total inventory: $891.38\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "mfOT",
       "code_hash": "d7c2e174de0e810f192e0ebcd5f38e05",
       "outputs": [
         {
@@ -1173,7 +1239,7 @@
       "console": []
     },
     {
-      "id": "woaO",
+      "id": "vGiW",
       "code_hash": "84a6141f626588f299934afdd739184b",
       "outputs": [
         {
@@ -1186,7 +1252,7 @@
       "console": []
     },
     {
-      "id": "HnMC",
+      "id": "SYQT",
       "code_hash": "d8cb88a4a782aa1a3abecba9ae2a81aa",
       "outputs": [
         {
