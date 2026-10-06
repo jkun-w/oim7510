@@ -48,6 +48,9 @@ coverage.xml
 *.cover
 *.py,cover
 .hypothesis/
+
+# Marimo
+__marimo__/
 .pytest_cache/
 cover/
 
