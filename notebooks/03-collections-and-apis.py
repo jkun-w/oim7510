@@ -479,6 +479,17 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
+    1. list
+    2. set
+    3. dict
+    4. tuple
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
     ## ✏️ D · The portfolio again
 
     Notebook 2 held the six holdings as a list of dictionaries. Here they are as a list of tuples, one holding per tuple.
@@ -505,6 +516,21 @@ def _():
         ("TSLA", 150, 255.70),
     ]
     holdings
+    return (holdings,)
+
+
+@app.cell
+def _(holdings):
+    total_cost = 0
+    # use a for loop to iterate every stock to get the share and price of every stock, then calculate the subtotal and add the subtotal to total_costfor stock in stocks:
+
+    for stock in holdings:
+        shares = stock[1]
+        price = stock[2]
+        subtotal = shares * price
+        total_cost += subtotal
+    print(f"Total cost: {total_cost}")
+
     return
 
 
@@ -574,6 +600,7 @@ def _(requests):
         "&temperature_unit=fahrenheit&wind_speed_unit=mph"
         "&timezone=America/New_York"
     )
+    print(babson_url)
     babson_reply = requests.get(babson_url, timeout=10)
     babson_reply.status_code
     return (babson_reply,)
@@ -696,6 +723,14 @@ def _(mo):
 
     **E · The wind in a sentence.** Add a cell that takes the wind speed and its unit out of `babson_weather` and puts both into one sentence with an f-string. *Check yourself: the unit reads `mp/h`, which is how this service writes miles per hour.*
     """)
+    return
+
+
+@app.cell
+def _(babson_weather):
+    wind_speed = babson_weather["current"]["wind_speed_10m"]
+    wind_unit = babson_weather["current_units"]["wind_speed_10m"]
+    f"The wind is {wind_speed} {wind_unit}"
     return
 
 
