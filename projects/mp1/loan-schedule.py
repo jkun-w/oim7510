@@ -255,6 +255,24 @@ def _(mo):
     return
 
 
+@app.cell
+def _(schedule_30):
+    print("30-Year Loan Amortization Schedule")
+    print(f"{'Month':>6} {'Payment':>12} {'Interest':>12} {'Principal':>12} {'Balance':>14}")
+    for _row in schedule_30:
+        print(f"{_row['month']:>6} {_row['payment']:>12,.2f} {_row['interest']:>12,.2f} {_row['principal']:>12,.2f} {_row['balance']:>14,.2f}")
+    return
+
+
+@app.cell
+def _(schedule_15):
+    print("15-Year Loan Amortization Schedule")
+    print(f"{'Month':>6} {'Payment':>12} {'Interest':>12} {'Principal':>12} {'Balance':>14}")
+    for _row in schedule_15:
+        print(f"{_row['month']:>6} {_row['payment']:>12,.2f} {_row['interest']:>12,.2f} {_row['principal']:>12,.2f} {_row['balance']:>14,.2f}")
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
