@@ -157,11 +157,11 @@ def _(mo):
 
     **B ·**France, Germany, Brazil and USA
 
-    **C ·**
+    **C ·**1. list 2. set 3. dict 4. tuple
 
-    **D ·**
+    **D ·**$116,302.70
 
-    **G ·**
+    **G ·**Florida. Code that always takes [0] would have picked the wrong town entirely.
     """)
     return
 
@@ -530,7 +530,6 @@ def _(holdings):
         subtotal = shares * price
         total_cost += subtotal
     print(f"Total cost: {total_cost}")
-
     return
 
 
@@ -742,6 +741,24 @@ def _(mo):
     return
 
 
+@app.cell
+def _(requests):
+    wellesley_reply = requests.get(
+        "https://geocoding-api.open-meteo.com/v1/search?name=Wellesley&count=1",
+        timeout=10,
+    )
+    wellesley_results = wellesley_reply.json()["results"]
+    wellesley_results
+    return (wellesley_results,)
+
+
+@app.cell
+def _(wellesley_results):
+    wellesley_first = wellesley_results[0]
+    wellesley_first["latitude"], wellesley_first["longitude"], wellesley_first["admin1"]
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -749,6 +766,17 @@ def _(mo):
 
     **Going further.** Use F's coordinates to ask for Wellesley's current temperature. Build the address with an f-string, so that changing the town changes the forecast.
     """)
+    return
+
+
+@app.cell
+def _(requests):
+    babson_park_reply = requests.get(
+        "https://geocoding-api.open-meteo.com/v1/search?name=Babson Park&count=10",
+        timeout=10,
+    )
+    babson_park_results = babson_park_reply.json()["results"]
+    babson_park_results
     return
 
 
