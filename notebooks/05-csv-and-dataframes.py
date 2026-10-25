@@ -224,6 +224,53 @@ def _(towns_from_file):
     return
 
 
+@app.cell
+def _(towns_from_file):
+    smallest_town = None
+    largest_town = None
+
+    for _town in towns_from_file:
+        _population = int(_town["population"])
+
+        if smallest_town is None or _population < int(smallest_town["population"]):
+            smallest_town = _town
+
+        if largest_town is None or _population > int(largest_town["population"]):
+            largest_town = _town
+
+    print("Town with the fewest people:", smallest_town["name"])
+    print("Population:", smallest_town["population"])
+
+    print("Town with the most people:", largest_town["name"])
+    print("Population:", largest_town["population"])
+    return
+
+
+@app.cell
+def _(towns_from_file):
+    most_expensive = {}
+
+    for _town in towns_from_file:
+        _county = _town["county"]
+        _value = int(_town["average_single_family_value_dollars"])
+
+        if _county not in most_expensive:
+            most_expensive[_county] = _town
+
+        elif _value > int(most_expensive[_county]["average_single_family_value_dollars"]):
+            most_expensive[_county] = _town
+
+    for _county, _town in most_expensive.items():
+        print(
+            _county,
+            "-",
+            _town["name"],
+            "- $",
+            _town["average_single_family_value_dollars"]
+        )
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -286,7 +333,7 @@ def _(mo):
 @app.cell
 def _(pl, town_table):
     (
-        town_table.filter(pl.col("average_single_family_value_dollars") >= 1_000_000)
+        town_table.filter(pl.col("average_single_family_value_dollars") >= 2_000_000)
         .group_by("county")
         .agg(pl.len().alias("towns"))
         .sort("towns", descending=True)
@@ -344,6 +391,69 @@ def _(mo):
     return
 
 
+@app.cell
+def _(ma_counties, pl, town_table):
+    # Count towns in each county using Polars
+    county_town_counts = (
+        town_table
+        .group_by("county")
+        .agg(pl.len().alias("towns"))
+        .sort("county")
+    )
+
+    # Convert server data into a DataFrame
+    server_counties = pl.DataFrame(ma_counties)
+
+    # Show the counts from our CSV
+    county_town_counts
+    return county_town_counts, server_counties
+
+
+@app.cell
+def _(county_town_counts, pl, server_counties):
+    county_comparison = (
+        county_town_counts
+        .join(
+            server_counties.select(
+                pl.col("name").alias("county"),
+                pl.col("towns").alias("server_towns")
+            ),
+            on="county"
+        )
+        .with_columns(
+            (pl.col("towns") == pl.col("server_towns")).alias("match")
+        )
+    )
+
+    county_comparison
+    return (county_comparison,)
+
+
+@app.cell
+def _(county_comparison):
+    print("All 14 counties agree:", county_comparison["match"].all())
+    print("Number of counties:", county_comparison.height)
+    return
+
+
+@app.cell
+def _(pl, town_table):
+    county_home_values = (
+        town_table
+        .filter(pl.col("population") > 20000)
+        .group_by("county")
+        .agg(
+            pl.col("average_single_family_value_dollars")
+            .mean()
+            .alias("average_home_value")
+        )
+        .sort("average_home_value", descending=True)
+    )
+
+    county_home_values
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -362,7 +472,7 @@ def _(mo, town_table):
         f"""
         SELECT county, COUNT(*) AS towns
         FROM town_table
-        WHERE average_single_family_value_dollars >= 1000000
+        WHERE average_single_family_value_dollars >= 2000000
         GROUP BY county
         ORDER BY towns DESC
         """
@@ -387,6 +497,27 @@ def _(mo):
 
     **Going further.** Write a SQL query of your own on `town_table`, and check its answer in polars.
     """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    If the threshold increases from $1,000,000 to $2,000,000, the number of qualifying towns in each county can only decrease or stay the same. No county's count can increase because fewer towns will meet the higher threshold.
+    """)
+    return
+
+
+@app.cell
+def _(mo, town_table):
+    _df = mo.sql(
+        f"""
+        SELECT name, county, average_single_family_value_dollars
+        FROM town_table
+        ORDER BY average_single_family_value_dollars DESC
+        LIMIT 5
+        """
+    )
     return
 
 
@@ -440,6 +571,82 @@ def _(mo):
 
     **Going further.** Color the bars or dots by a column with `color=`, and explain what the colors add.
     """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    Question: Which counties in Massachusetts have the highest average single-family home values?
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    Answer: Nantucket
+    """)
+    return
+
+
+@app.cell
+def _(pl, town_table):
+    county_avg_home_values = (
+        town_table
+        .group_by("county")
+        .agg(
+            pl.col("average_single_family_value_dollars")
+            .mean()
+            .alias("avg_home_value")
+        )
+        .sort("avg_home_value", descending=True)
+    )
+
+    county_avg_home_values
+    return (county_avg_home_values,)
+
+
+@app.cell
+def _(alt, county_avg_home_values, mo):
+    county_home_chart = mo.ui.altair_chart(
+        county_avg_home_values.plot.bar(
+            y=alt.Y("county", sort="-x", title="County"),
+            x=alt.X(
+                "avg_home_value",
+                title="Average Single-Family Home Value ($)",
+                axis=alt.Axis(format="$,.0f")
+            )
+        ).properties(
+            title="Average Single-Family Home Value by Massachusetts County"
+        )
+    )
+
+    county_home_chart
+    return
+
+
+@app.cell
+def _(alt, county_avg_home_values, mo):
+    county_home_chart_colored = mo.ui.altair_chart(
+        county_avg_home_values.plot.bar(
+            y=alt.Y("county", sort="-x", title="County"),
+            x=alt.X(
+                "avg_home_value",
+                title="Average Single-Family Home Value ($)",
+                axis=alt.Axis(format="$,.0f")
+            ),
+            color=alt.Color(
+                "avg_home_value",
+                title="Average Home Value ($)",
+                scale=alt.Scale(scheme="blues")
+            )
+        ).properties(
+            title="Average Single-Family Home Value by Massachusetts County"
+        )
+    )
+
+    county_home_chart_colored
     return
 
 
