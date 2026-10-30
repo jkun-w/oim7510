@@ -69,7 +69,7 @@ def _(mo):
 
 @app.cell
 def _():
-    county = "Middlesex"
+    county = "Norfolk"
     budget_dollars = 700000
     tax_limit_dollars = 8000
     fiscal_year = 2026
@@ -293,6 +293,8 @@ def _(mo):
     **My prediction.** I will change `county` in the Inputs cell from `"Middlesex"` to `"Norfolk"`. I expect the number of qualifying towns to change, since Norfolk has different towns with different home values and tax bills than Middlesex, and I expect the cheapest-bill town in the result table to be a different town entirely, since Malden (the current cheapest) is a Middlesex town and isn't in Norfolk County at all.
 
     *(Commit this cell with the message `mp2: prediction` before making the change below.)*
+
+    **What happened.** After changing `county` to `"Norfolk"` and rerunning the notebook, the number of qualifying towns dropped from 12 to 7, and the cheapest-bill town changed from Malden ($4,952, Middlesex) to Bellingham ($6,073, Norfolk). Both parts of my prediction were correct: Norfolk has only 28 towns in total against Middlesex's 54, so a smaller county naturally produced a smaller result, and since Malden sits in Middlesex, it could not appear once the county changed. Section 6's check still holds on the new data too: Bellingham's reported bill of $6,073 is very close to its value times its tax rate divided by 1,000 ($6,073.26).
     """)
     return
 
