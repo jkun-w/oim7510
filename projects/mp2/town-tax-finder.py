@@ -536,6 +536,8 @@ def _(
 def _(mo):
     mo.md(r"""
     # 10. Time Spent
+
+    Estimate 4 hours (forgot to count)
     """)
     return
 
