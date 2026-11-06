@@ -218,6 +218,22 @@ def _(mo):
     return
 
 
+@app.cell
+def _(database, duckdb):
+    with duckdb.connect(database) as _con:
+        _con.execute("""
+            CREATE TABLE town_bills (
+                town                                VARCHAR NOT NULL REFERENCES towns(name),
+                fiscal_year                         INTEGER NOT NULL,
+                average_single_family_bill_dollars  INTEGER NOT NULL CHECK (average_single_family_bill_dollars > 0),
+                PRIMARY KEY (town, fiscal_year)
+            )
+        """)
+        _con.execute("INSERT INTO town_bills VALUES ('Wellesley', 2024, 18690)")
+        _con.execute("INSERT INTO town_bills VALUES ('Wellesley', 2025, 19792)")
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -254,6 +270,35 @@ def _(mo):
     return
 
 
+@app.cell
+def _(database, duckdb):
+    _messages = []
+
+    try:
+        with duckdb.connect(database) as _con:
+            _con.execute("INSERT INTO towns VALUES ('Boston', 'Suffolk', 673458, 65287, 7627)")
+        _messages.append("duplicate name: accepted")
+    except duckdb.ConstraintException as _error:
+        _messages.append(f"duplicate name: {str(_error).splitlines()[0]}")
+
+    try:
+        with duckdb.connect(database) as _con:
+            _con.execute("INSERT INTO towns VALUES ('Nowhereville', 'Norfolk', 0, 1, 1)")
+        _messages.append("population of zero: accepted")
+    except duckdb.ConstraintException as _error:
+        _messages.append(f"population of zero: {str(_error).splitlines()[0]}")
+
+    try:
+        with duckdb.connect(database) as _con:
+            _con.execute("INSERT INTO towns VALUES ('Somewhereville', 'Atlantis', 10, 1, 1)")
+        _messages.append("county that does not exist: accepted")
+    except duckdb.ConstraintException as _error:
+        _messages.append(f"county that does not exist: {str(_error).splitlines()[0]}")
+
+    _messages
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -286,6 +331,18 @@ def _(mo):
     *Check yourself: Brookline, Newton, Cambridge, Somerville, Quincy.*
 
     **Going further.** Ask the same question of `counties` and `towns` together: which county is each of those five in, and what share of its county's people does each hold? That needs both tables at once, which the topic slides call a join.
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+        SELECT name, population, average_single_family_bill_dollars
+        FROM towns
+        WHERE population > 50000
+        ORDER BY average_single_family_bill_dollars DESC
+        LIMIT 5
     """)
     return
 
