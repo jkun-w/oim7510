@@ -8,7 +8,7 @@
 
 ```mermaid
 erDiagram
-  MEMBERS ||--o{ ORDERS : places
+  MEMBERS |o--o{ ORDERS : places
   PRODUCTS ||--o{ ORDER_LINES : "is ordered as"
   ORDERS ||--|{ ORDER_LINES : contains
   ORDER_LINES ||--o{ ORDER_LINE_OPTIONS : carries
