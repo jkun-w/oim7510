@@ -1,0 +1,27 @@
+product_id,name,category,price,cost,is_available
+1,Drip Coffee,coffee,2.75,0.6,True
+2,Americano,coffee,3.25,0.65,True
+3,Latte,coffee,4.5,1.1,True
+4,Cappuccino,coffee,4.5,1.1,True
+5,Cold Brew,coffee,4.0,0.9,True
+6,Espresso,coffee,2.5,0.55,True
+7,Mocha,coffee,4.75,1.2,True
+8,Flat White,coffee,4.5,1.05,True
+9,Green Tea,tea,3.0,0.5,True
+10,Black Tea,tea,3.0,0.5,True
+11,Chai Latte,tea,4.25,1.0,True
+12,Matcha Latte,tea,4.75,1.3,True
+13,Herbal Tea,tea,3.0,0.5,False
+14,Iced Tea,tea,3.25,0.55,True
+15,Bagel,food,2.5,0.8,True
+16,Blueberry Muffin,food,3.25,1.0,True
+17,Croissant,food,3.5,1.05,True
+18,Avocado Toast,food,6.5,2.2,True
+19,Breakfast Sandwich,food,5.75,2.0,True
+20,Chocolate Chip Cookie,food,2.25,0.6,True
+21,Banana Bread,food,3.0,0.9,True
+22,Granola Bar,food,2.0,0.7,False
+23,Bottled Water,other,2.0,0.4,True
+24,Orange Juice,other,3.25,1.0,True
+25,Babson Bean Mug,other,12.0,5.0,True
+26,Babson Bean Tote Bag,other,10.0,4.0,True

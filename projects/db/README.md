@@ -81,3 +81,8 @@ erDiagram
 
 ## 4. Design Choices
 
+- **Keys instead of the business's own identifiers.** Members have a mobile number and an optional email, but a mobile number can change and an email can be missing, so neither can be a primary key — I used a surrogate `member_id` instead. The same reasoning applies to `product_id` and `option_id`: a menu name could in principle repeat or be renamed, so a surrogate key is safer than the name.
+- **Optional relationships.** `orders.member_id` is optional, because "customers who are not members buy too, and their orders name no customer." `members.email` is optional because the scenario says so directly. A line's options are optional too — a line can carry zero, one or several, and food and drink lines that take no options still need to exist.
+- **A rule no `CHECK` can hold.** "An order's payments add up to the order's total" spans four tables (`orders`, `order_lines`, `order_line_options`, `payments`), and a `CHECK` constraint can only look at one row of one table. `build.py` checks it instead with a query (the `order_totals` view), comparing what an order's lines and options charged against what its payments add up to.
+- **What I changed.** I restricted options to lines whose product is coffee or tea when generating the data, since oat milk on a bagel doesn't make sense for this café — the table itself still allows an option on any line, because the scenario never rules that out, and I didn't want the schema to assume a business rule the café hadn't actually stated.
+
