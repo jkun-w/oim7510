@@ -9,5 +9,6 @@ dependencies = [
     "faker>=40.39.0",
     "marimo[recommended]>=0.24.2",
     "matplotlib>=3.11.2",
+    "polars>=1.44.2",
     "requests>=2.34.2",
 ]

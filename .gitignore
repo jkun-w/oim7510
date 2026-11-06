@@ -65,8 +65,7 @@ db.sqlite3
 db.sqlite3-journal
 
 # DuckDB database file: build.py rebuilds this from projects/db/data/*.csv
-*.duckdb
-*.duckdb.wal
+*.duckdb*
 
 # Flask stuff:
 instance/

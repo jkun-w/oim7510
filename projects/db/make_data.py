@@ -13,16 +13,14 @@ def _():
 
 @app.cell
 def _(mo):
-    mo.md(
-        r"""
-        # Babson Bean Café — Generating the Data
+    mo.md(r"""
+    # Babson Bean Café — Generating the Data
 
-        This notebook makes up a café's worth of loyalty members, menu items, drink
-        options, orders and payments, shaped like the tables in `README.md`, and writes
-        each one to a CSV file in `projects/db/data/`. `build.py` reads those CSV files
-        to make the database.
-        """
-    )
+    This notebook makes up a café's worth of loyalty members, menu items, drink
+    options, orders and payments, shaped like the tables in `README.md`, and writes
+    each one to a CSV file in `projects/db/data/`. `build.py` reads those CSV files
+    to make the database.
+    """)
     return
 
 
@@ -66,7 +64,9 @@ def _(os):
 
 @app.cell
 def _(mo):
-    mo.md(r"""## Loyalty members""")
+    mo.md(r"""
+    ## Loyalty members
+    """)
     return
 
 
@@ -108,7 +108,9 @@ def _(DATA_DIR, TODAY, csv, fake, os, random, timedelta):
 
 @app.cell
 def _(mo):
-    mo.md(r"""## Menu""")
+    mo.md(r"""
+    ## Menu
+    """)
     return
 
 
@@ -173,7 +175,9 @@ def _(DATA_DIR, csv, os):
 
 @app.cell
 def _(mo):
-    mo.md(r"""## Options a drink can carry""")
+    mo.md(r"""
+    ## Options a drink can carry
+    """)
     return
 
 
@@ -215,21 +219,28 @@ def _(DATA_DIR, csv, os):
 
 @app.cell
 def _(mo):
-    mo.md(
-        r"""
-        ## Orders, their lines and options, and their payments
+    mo.md(r"""
+    ## Orders, their lines and options, and their payments
 
-        A handful of members (the first 8) are left out of every order below, so there
-        are loyalty members who joined and never ordered. A handful of orders also get
-        their payment thrown slightly off on purpose, so the payments-vs-total check has
-        something real to find.
-        """
-    )
+    A handful of members (the first 8) are left out of every order below, so there
+    are loyalty members who joined and never ordered. Exactly two orders also get a
+    payment that no longer matches their total — broken on purpose, so the
+    payments-vs-total check has something real to find. The data covers the 12
+    months up to `TODAY`, the `as_of` date Part B uses.
+    """)
     return
 
 
 @app.cell
-def _(TODAY, datetime, members, options, products, random, timedelta):
+def _():
+    # exact order_ids whose payment is deliberately wrong, named here so Part B
+    # knows which two rows to expect its check to find
+    MISMATCHED_ORDER_IDS = [50, 900]
+    return (MISMATCHED_ORDER_IDS,)
+
+
+@app.cell
+def _(MISMATCHED_ORDER_IDS, TODAY, datetime, members, options, products, random, timedelta):
     ORDER_COUNT = 1200
 
     never_ordering_member_ids = set()
@@ -244,6 +255,10 @@ def _(TODAY, datetime, members, options, products, random, timedelta):
     # kept out of the most recent 60 days, so question 7 has a real answer
     stale_product_names = {"Herbal Tea", "Granola Bar", "Babson Bean Tote Bag"}
 
+    # a café is busiest in the morning rush and again around lunch, not flat all day
+    HOURS = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    HOUR_WEIGHTS = [6, 10, 8, 4, 3, 7, 5, 2, 2, 3, 4, 3, 2]
+
     orders = []
     order_lines = []
     order_line_options = []
@@ -253,9 +268,10 @@ def _(TODAY, datetime, members, options, products, random, timedelta):
     next_payment_id = 1
 
     for order_id in range(1, ORDER_COUNT + 1):
-        days_ago = random.randint(0, 180)
+        days_ago = random.randint(0, 365)
         order_dt = datetime.combine(TODAY, datetime.min.time()) - timedelta(days=days_ago)
-        order_dt = order_dt.replace(hour=random.randint(7, 19), minute=random.randint(0, 59))
+        order_hour = random.choices(HOURS, weights=HOUR_WEIGHTS)[0]
+        order_dt = order_dt.replace(hour=order_hour, minute=random.randint(0, 59))
         is_recent = days_ago <= 60
 
         if random.random() < 0.45:
@@ -339,14 +355,12 @@ def _(TODAY, datetime, members, options, products, random, timedelta):
             payments.append({"payment_id": next_payment_id, "order_id": order_id, "method": method, "amount": order_total})
             next_payment_id = next_payment_id + 1
 
-    # on 12 orders, nudge one payment so it no longer matches the order's total
-    mismatched_order_ids = random.sample(range(1, ORDER_COUNT + 1), 12)
-    still_to_adjust = set(mismatched_order_ids)
+    # on exactly these two orders, nudge one payment so it no longer matches the total
+    still_to_adjust = set(MISMATCHED_ORDER_IDS)
     for payment in payments:
         if payment["order_id"] in still_to_adjust:
             payment["amount"] = round(payment["amount"] + random.uniform(1.0, 5.0), 2)
             still_to_adjust.remove(payment["order_id"])
-
     return order_line_options, order_lines, orders, payments
 
 
@@ -375,25 +389,35 @@ def _(DATA_DIR, csv, order_line_options, order_lines, orders, os, payments):
         _writer.writeheader()
         for _row in payments:
             _writer.writerow(_row)
-
     return
 
 
 @app.cell
-def _(mo, members, options, order_line_options, order_lines, orders, payments, products):
-    mo.md(
-        f"""
-        ## Row counts written to `projects/db/data/`
+def _(
+    MISMATCHED_ORDER_IDS,
+    members,
+    mo,
+    options,
+    order_line_options,
+    order_lines,
+    orders,
+    payments,
+    products,
+):
+    mo.md(f"""
+    ## Row counts written to `projects/db/data/`
 
-        - `members.csv`: {len(members)} rows
-        - `products.csv`: {len(products)} rows
-        - `options.csv`: {len(options)} rows
-        - `orders.csv`: {len(orders)} rows
-        - `order_lines.csv`: {len(order_lines)} rows
-        - `order_line_options.csv`: {len(order_line_options)} rows
-        - `payments.csv`: {len(payments)} rows
-        """
-    )
+    - `members.csv`: {len(members)} rows
+    - `products.csv`: {len(products)} rows
+    - `options.csv`: {len(options)} rows
+    - `orders.csv`: {len(orders)} rows
+    - `order_lines.csv`: {len(order_lines)} rows
+    - `order_line_options.csv`: {len(order_line_options)} rows
+    - `payments.csv`: {len(payments)} rows
+
+    Orders {MISMATCHED_ORDER_IDS[0]} and {MISMATCHED_ORDER_IDS[1]} are the two rows
+    where a payment was deliberately broken so it no longer matches the order's total.
+    """)
     return
 
 

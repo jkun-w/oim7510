@@ -989,6 +989,7 @@ dependencies = [
     { name = "faker" },
     { name = "marimo", extra = ["recommended"] },
     { name = "matplotlib" },
+    { name = "polars" },
     { name = "requests" },
 ]
 
@@ -998,6 +999,7 @@ requires-dist = [
     { name = "faker", specifier = ">=40.39.0" },
     { name = "marimo", extras = ["recommended"], specifier = ">=0.24.2" },
     { name = "matplotlib", specifier = ">=3.11.2" },
+    { name = "polars", specifier = ">=1.44.2" },
     { name = "requests", specifier = ">=2.34.2" },
 ]
 
