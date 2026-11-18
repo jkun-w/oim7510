@@ -237,6 +237,50 @@ def _(mo):
     return
 
 
+@app.cell
+def _(ask, towns_database):
+    ask(towns_database, """
+        SELECT t.name, t.county, t.population, c.population AS county_population
+        FROM towns AS t
+        JOIN counties AS c ON t.county = c.name
+        ORDER BY t.population DESC
+    """)
+    return
+
+
+@app.cell
+def _(ask, towns_database):
+
+    ask(towns_database, """
+        SELECT
+            t.name,
+            t.county,
+            t.population,
+            c.population AS county_population,
+            ROUND(
+                t.population * 100.0 / c.population, 1
+            ) AS population_share
+        FROM towns AS t
+        JOIN counties AS c ON t.county = c.name
+        ORDER BY population_share DESC
+        LIMIT 5
+    """)
+
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    **Exercise A – Towns and Their Counties**
+
+    The JOIN returns 351 rows because each town belongs to exactly one county, and each county has a matching record in the counties table. Therefore, each town matches one county without creating duplicate rows or excluding any towns.
+
+    Nantucket's population share is exactly 100% because Nantucket is the only town in Nantucket County. As a result, the town's population equals the county's total population.
+    """)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -294,18 +338,6 @@ def _(mo):
     *Check yourself: four territories, Columbia, Bentonville, Dallas and Austin.*
 
     **Going further.** List the employees with the number of territories each covers, and check that the counts add up to the rows of `employee_territories`. Then find the same four territories with `WHERE NOT EXISTS (...)`.
-    """)
-    return
-
-
-@app.cell
-def _(ask, northwind_database):
-    ask(northwind_database, """
-        SELECT t.TerritoryDescription
-        FROM territories AS t
-        LEFT JOIN employee_territories AS et ON et.TerritoryID = t.TerritoryID
-        WHERE et.TerritoryID IS NULL
-        ORDER BY t.TerritoryDescription
     """)
     return
 
@@ -411,25 +443,6 @@ def _(mo):
     return
 
 
-@app.cell
-def _(ask, northwind_database):
-    ask(northwind_database, """
-        SELECT ShipCountry, round(sum(Freight), 2) AS total_freight
-        FROM orders
-        GROUP BY ShipCountry
-        ORDER BY total_freight DESC
-    """)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""
-    `Freight` is a column of `orders` itself, so grouping `orders` alone counts each order's freight exactly once. No join is needed here, unlike the chain of joins below.
-    """)
-    return
-
-
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -446,41 +459,6 @@ def _(mo):
     *Check yourself: Beverages first, with about 13,375,939, and all eight, added before rounding, give 63,856,337.63.*
 
     **Going further.** Compute revenue by category for each year, and find the category that grew the most.
-    """)
-    return
-
-
-@app.cell
-def _(ask, northwind_database):
-    ask(northwind_database, """
-        SELECT cat.CategoryName,
-               round(sum(od.UnitPrice * od.Quantity * (1 - od.Discount)), 2) AS revenue
-        FROM orders AS o
-        JOIN order_details AS od ON od.OrderID = o.OrderID
-        JOIN products AS p ON p.ProductID = od.ProductID
-        JOIN categories AS cat ON cat.CategoryID = p.CategoryID
-        WHERE o.ShipCountry = 'USA'
-        GROUP BY cat.CategoryName
-        ORDER BY revenue DESC
-    """)
-    return
-
-
-@app.cell
-def _(ask, northwind_database):
-    ask(northwind_database, """
-        SELECT round(sum(od.UnitPrice * od.Quantity * (1 - od.Discount)), 2) AS usa_revenue
-        FROM orders AS o
-        JOIN order_details AS od ON od.OrderID = o.OrderID
-        WHERE o.ShipCountry = 'USA'
-    """)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""
-    This matches the sum of the eight categories above, 63,856,337.63, computed without `products` or `categories` at all.
     """)
     return
 
@@ -553,61 +531,6 @@ def _(mo):
     3. Find the customers in `Sales.Customer` who never placed an order, and the products in `Production.Product` that never sold. *Check yourself: 701 customers and 238 products.*
 
     **Going further.** Answer one question of your own about AdventureWorks that needs three tables, and check it against a total you can get from one of them.
-    """)
-    return
-
-
-@app.cell
-def _(ask_server):
-    ask_server("""
-        SELECT
-            (SELECT count(*) FROM Sales.SalesOrderHeader) AS orders,
-            (SELECT count(*) FROM Sales.SalesOrderDetail) AS order_lines,
-            (SELECT count(*)
-             FROM Sales.SalesOrderHeader AS h
-             JOIN Sales.SalesOrderDetail AS d ON d.SalesOrderID = h.SalesOrderID) AS joined
-    """)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""
-    Every row of `Sales.SalesOrderDetail` has a `SalesOrderID` that exists in `Sales.SalesOrderHeader`, so each detail row matches exactly one header row. The join therefore has one row for each line in `Sales.SalesOrderDetail`, the same count as that table alone.
-    """)
-    return
-
-
-@app.cell
-def _(ask_server):
-    ask_server("""
-        SELECT
-            (SELECT sum(Freight) FROM Sales.SalesOrderHeader) AS freight,
-            (SELECT sum(h.Freight)
-             FROM Sales.SalesOrderHeader AS h
-             JOIN Sales.SalesOrderDetail AS d ON d.SalesOrderID = h.SalesOrderID) AS freight_after_the_join
-    """)
-    return
-
-
-@app.cell
-def _(ask_server):
-    ask_server("""
-        SELECT count(*) AS customers_without_orders
-        FROM Sales.Customer AS c
-        LEFT JOIN Sales.SalesOrderHeader AS h ON h.CustomerID = c.CustomerID
-        WHERE h.CustomerID IS NULL
-    """)
-    return
-
-
-@app.cell
-def _(ask_server):
-    ask_server("""
-        SELECT count(*) AS products_never_sold
-        FROM Production.Product AS p
-        LEFT JOIN Sales.SalesOrderDetail AS d ON d.ProductID = p.ProductID
-        WHERE d.ProductID IS NULL
     """)
     return
 
